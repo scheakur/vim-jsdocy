@@ -1,5 +1,5 @@
 "=============================================================================
-" vim-jsdocker - Generate JsDoc comment
+" vim-jsdocy - Generate JsDoc comment
 " Copyright (c) 2013 Scheakur <http://scheakur.com/>
 "
 " License: MIT license  {{{
@@ -26,13 +26,13 @@
 let s:save_cpo = &cpo
 set cpo&vim
 
-command! -nargs=0 JsDockerAdd  call s:add_jsdoc()
+command! -nargs=0 JsDocyAdd  call s:add_jsdoc()
 
 function! s:add_jsdoc()
-	call jsdocker#add_jsdoc()
+	call jsdocy#add_jsdoc()
 endfunction
 
-noremap <buffer> <Plug>(jsdocker-add-jsdoc)  :<C-u>JsDockerAdd<CR>
+noremap <buffer> <Plug>(jsdocy-add-jsdoc)  :<C-u>JsDocyAdd<CR>
 
 let &cpo = s:save_cpo
 unlet s:save_cpo

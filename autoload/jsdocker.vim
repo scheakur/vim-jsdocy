@@ -1,5 +1,5 @@
 "=============================================================================
-" vim-jsdocker - Generate JsDoc comment
+" vim-jsdocy - Generate JsDoc comment
 " Copyright (c) 2013 Scheakur <http://scheakur.com/>
 "
 " License: MIT license  {{{
@@ -25,13 +25,13 @@
 "=============================================================================
 
 " Interface {{{
-function! jsdocker#add_jsdoc()
-	let jsdoc = jsdocker#make_jsdoc()
+function! jsdocy#add_jsdoc()
+	let jsdoc = jsdocy#make_jsdoc()
 	call append(line('.') - 1, jsdoc)
 endfunction
 
 
-function! jsdocker#make_jsdoc(...)
+function! jsdocy#make_jsdoc(...)
 	let for_input_mode = get(a:, 1, 0)
 	let comment_symbols = s:make_comment_symbols(for_input_mode)
 	let tags = s:get_tags()

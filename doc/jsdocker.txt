@@ -1,4 +1,4 @@
-*jsdocker.txt* *jsdocker* Generate JsDoc comment
+*jsdocy.txt* *jsdocy* Generate JsDoc comment
 
 Copyright (c) 2013 Scheakur <http://scheakur.com/>
 
@@ -27,27 +27,27 @@ License: MIT license  {{{
 
 
 ==============================================================================
-CONTENTS						*jsdocker-contents*
+CONTENTS						*jsdocy-contents*
 
-Introduction			|jsdocker-introduction|
-Interface			|jsdocker-interface|
-  Commands			|jsdocker-commands|
-  Key mappings			|jsdocker-key-mappings|
+Introduction			|jsdocy-introduction|
+Interface			|jsdocy-interface|
+  Commands			|jsdocy-commands|
+  Key mappings			|jsdocy-key-mappings|
 
 
 
 
 ==============================================================================
-INTRODUCTION						*jsdocker-introduction*
+INTRODUCTION						*jsdocy-introduction*
 
-JsDocker helps you to generate comments for JsDoc.
+JsDocy helps you to generate comments for JsDoc.
 You can use this like the followings:
 >
-	:JsDockerAddJsDoc
+	:JsDocyAddJsDoc
 <
 
 For example, if the cursor is placed on the first line of the following code
-and you execute `:JsDockerAddJsDoc`,
+and you execute `:JsDocyAddJsDoc`,
 >
 	function foo(bar, baz, qux) {
 		// some code
@@ -71,23 +71,23 @@ then you get the result as below.
 
 
 ==============================================================================
-INTERFACE						*jsdocker-interface*
+INTERFACE						*jsdocy-interface*
 
 ------------------------------------------------------------------------------
-COMMANDS						*jsdocker-commands*
+COMMANDS						*jsdocy-commands*
 
-							*:JsDockerAddJsDoc*
-:JsDockerAddJsDoc
+							*:JsDocyAddJsDoc*
+:JsDocyAddJsDoc
 	Generate JsDoc comment for the function described in current line.
 
 
 
 ------------------------------------------------------------------------------
-KEY MAPPINGS						*jsdocker-key-mappings*
+KEY MAPPINGS						*jsdocy-key-mappings*
 
 Normal mode mappings.
 
-<Plug>(jsdocker-add-jsdoc)			*<Plug>(jsdocker-add-jsdoc)*
+<Plug>(jsdocy-add-jsdoc)			*<Plug>(jsdocy-add-jsdoc)*
 	Generate JsDoc comment for the function described in current line.
 
 
