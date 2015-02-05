@@ -136,16 +136,16 @@ function! s:get_function_declaration()
 	let in_fn = 0
 
 	for line in lines
-		if !in_fn && line =~ 'function\s*\( \w*\)\?\s*('
+		if !in_fn && line =~# 'function\s*\( \w*\)\?\s*('
 			let in_fn = 1
 		endif
 		if in_fn
 			call add(fn_lines, line)
-			if  line =~ ')'
+			if  line =~# ')'
 				break
 			endif
 		endif
-		if !in_fn && line !~ '^\s*$'
+		if !in_fn && line !~# '^\s*$'
 			return ''
 		endif
 	endfor
