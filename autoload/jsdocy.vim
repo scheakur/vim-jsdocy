@@ -116,7 +116,15 @@ function! s:get_function_name(fn_decl)
 	if (a:fn_decl == '')
 		return ''
 	endif
-	return substitute(a:fn_decl, '.*function\s\+\(\w*\)\s*(.*', '\1', '')
+	let re_fn_decl = '.*\<function\>\s*\<\(\w*\)\>\s*(.*'
+	if a:fn_decl =~# re_fn_decl
+		return substitute(a:fn_decl, re_fn_decl, '\1', '')
+	endif
+	let re_fn_expr = '.*\<\(\w*\)\>\s*[:=]\s*\<function\>.*'
+	if a:fn_decl =~# re_fn_expr
+		return substitute(a:fn_decl, re_fn_expr, '\1', '')
+	endif
+	return ''
 endfunction
 
 
