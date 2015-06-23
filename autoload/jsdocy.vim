@@ -27,6 +27,9 @@
 " Interface {{{
 function! jsdocy#add_jsdoc()
 	let jsdoc = jsdocy#make_jsdoc()
+	if empty(jsdoc)
+		return
+	endif
 	call append(line('.') - 1, jsdoc)
 endfunction
 
@@ -35,6 +38,9 @@ function! jsdocy#make_jsdoc(...)
 	let for_input_mode = get(a:, 1, 0)
 	let comment_symbols = s:make_comment_symbols(for_input_mode)
 	let tags = s:get_tags()
+	if empty(tags)
+		return ''
+	endif
 	return s:make_jsdoc(comment_symbols, tags)
 endfunction
 " }}}
@@ -79,6 +85,9 @@ let s:Construtor = s:tag('constructor')
 " Internal functions {{{
 function! s:get_tags()
 	let fn_decl = s:get_function_declaration()
+	if (fn_decl == '')
+		return []
+	endif
 	let tags = s:get_params(fn_decl)
 	let opt = s:get_option(fn_decl)
 	call add(tags, opt)
